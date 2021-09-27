@@ -25,14 +25,15 @@ public class Node implements Comparable<Node>{
         this.id = id;
         this.name = name;
     }
+
+
     @Override
     public int compareTo(Node o) {
         return 0;
     }
 
-
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -46,4 +47,10 @@ public class Node implements Comparable<Node>{
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public int hashCode() { return this.name.hashCode(); }
+
+    @Override
+    public String toString() { return Integer.toString(id);}
 }

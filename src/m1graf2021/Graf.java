@@ -7,12 +7,17 @@ import java.util.TreeMap;
 
 public class Graf  {
 
-    Map<Node, List<Edge>> adjEdList;
-    List<Edge> EdgeList = new ArrayList<>();
+    protected Map<Node, List<Edge>> adjEdList;
+    protected List<Edge> edgeList = new ArrayList<>();
 
     public Graf() {
         adjEdList = new TreeMap<>();
-        this.EdgeList = new ArrayList<>();
+        this.edgeList = new ArrayList<>();
+    }
+
+    public Graf(Map<Node, List<Edge>> adjEdList, List<Edge> edgeList) {
+        this.adjEdList = adjEdList;
+        this.edgeList = edgeList;
     }
 
     /***
