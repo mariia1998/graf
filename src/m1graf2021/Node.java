@@ -53,4 +53,22 @@ public class Node implements Comparable<Node>{
 
     @Override
     public String toString() { return Integer.toString(id);}
+
+    @Override
+    public boolean equals(Object o) {
+        if(o == null) {
+            return false;
+        }
+        if(o.getClass() != this.getClass()) {
+            return false;
+        }
+
+        final Node other = (Node)o;
+        if(other.id != ((Node) o).id) {
+            return false;
+        }
+
+        return true;
+
+    }
 }
