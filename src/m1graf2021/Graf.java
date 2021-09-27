@@ -28,4 +28,12 @@ public class Graf  {
         return adjEdList.size();
     }
 
+
+    public boolean existsNode(Node n) {
+        if(adjEdList.containsKey(n)) {
+            return true;
+        }
+        return false;
+    }
+
 }
