@@ -22,14 +22,14 @@ public class Node implements Comparable<Node>{
      * @param id the id of one node
      */
     public Node(int id, String name) {
-        this.id = id;
+        this(id);
         this.name = name;
     }
 
 
     @Override
-    public int compareTo(Node o) {
-        return 0;
+    public int compareTo(Node other) {
+        return this.id - other.id;
     }
 
     public String getName() {
