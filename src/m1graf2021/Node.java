@@ -27,6 +27,11 @@ public class Node implements Comparable<Node>{
     }
 
 
+    /**
+     * Compare the id(Integer value) of the current node and the target node
+     * @param other other node which value we want to compare with
+     * @return  negative number indicates the current node is smaller, equal indicates same values, positive number indicates the current node is greater than the target
+     */
     @Override
     public int compareTo(Node other) {
         if(other == null) {
@@ -57,6 +62,12 @@ public class Node implements Comparable<Node>{
     @Override
     public String toString() { return Integer.toString(id);}
 
+
+    /**
+     * See if the current and the target nodes are equal
+     * @param o target node which we want to compare with
+     * @return  true or false depending on the result
+     */
     @Override
     public boolean equals(Object o) {
         if(o == null) {
