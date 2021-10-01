@@ -7,6 +7,10 @@ public class Edge implements Comparable<Edge>  {
     private int from;
 
 
+    private Node fromNode;
+    private Node toNode;
+
+
 
     /*
      * Constructor of one edge
@@ -16,6 +20,16 @@ public class Edge implements Comparable<Edge>  {
     public Edge(int from,int to){
         this.from = from;
         this.to = to;
+    }
+
+    /**
+     * Constructor of the edge
+     * @param from the starting point node
+     * @param to the end point node
+     */
+    public Edge(Node from, Node to) {
+        this.fromNode = from;
+        this.toNode = to;
     }
 
     public void setTo(int to) {

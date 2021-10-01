@@ -29,6 +29,9 @@ public class Node implements Comparable<Node>{
 
     @Override
     public int compareTo(Node other) {
+        if(other == null) {
+            throw new NullPointerException("The node doesn't exist");
+        }
         return this.id - other.id;
     }
 
