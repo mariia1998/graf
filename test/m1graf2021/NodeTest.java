@@ -24,7 +24,6 @@ class NodeTest {
                 ()->{
                     int res = node.compareTo(nullPointer);
                 });
-
     }
 
 
@@ -54,5 +53,14 @@ class NodeTest {
 
     @Test
     void testEquals() {
+        Node node = new Node(1);
+        Node nullPointerNode = null;
+        Node sameValueNode = new Node(1);
+        Node differentValueNode = new Node(2);
+
+        assertEquals(node, sameValueNode);
+        assertNotEquals(node, differentValueNode);
+        assertNotEquals(node, nullPointerNode);
+
     }
 }
