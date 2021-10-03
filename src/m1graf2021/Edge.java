@@ -54,6 +54,10 @@ public class Edge implements Comparable<Edge>  {
 
     @Override
     public int compareTo(Edge o) {
+        int result  = from - o.getFrom();
+
+
+
         return 0;
     }
 }

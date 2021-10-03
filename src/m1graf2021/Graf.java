@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Graf  {
+public class Graf {
 
-    protected Map<Node, List<Edge>> adjEdList;
+    protected Map<Node, List<Node>> adjEdList;
     protected List<Edge> edgeList = new ArrayList<>();
 
     public Graf() {
@@ -15,7 +15,7 @@ public class Graf  {
         this.edgeList = new ArrayList<>();
     }
 
-    public Graf(Map<Node, List<Edge>> adjEdList, List<Edge> edgeList) {
+    public Graf(Map<Node, List<Node>> adjEdList, List<Edge> edgeList) {
         this.adjEdList = adjEdList;
         this.edgeList = edgeList;
     }
@@ -30,10 +30,29 @@ public class Graf  {
 
 
     public boolean existsNode(Node n) {
-        if(adjEdList.containsKey(n)) {
+        if (adjEdList.containsKey(n)) {
             return true;
         }
         return false;
     }
 
+    public void addNode(Node n) {
+        if (existsNode(n)) {
+            System.out.println("the node already exists");
+        }
+        else
+        {
+            List<Node> added =new ArrayList<>();
+            adjEdList.put(n, added);}
+
+    }
+
+    public void addNode(int id) {
+        Node node = new Node(id);
+        addNode(node);
+    }
+
+ /*   public List<Node> getAllNodes(){
+
+    }*/
 }
