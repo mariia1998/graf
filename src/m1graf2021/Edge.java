@@ -5,10 +5,12 @@ public class Edge implements Comparable<Edge>  {
 
     private int to ;
     private int from;
-
+    private int weight ;
 
     private Node fromNode;
     private Node toNode;
+    private String label;
+
 
 
 
@@ -20,6 +22,25 @@ public class Edge implements Comparable<Edge>  {
     public Edge(int from,int to){
         this.from = from;
         this.to = to;
+    }
+
+    public Edge(int from,int to, int weight){
+        this.from = from;
+        this.to = to;
+        this.weight= weight;
+    }
+
+    public Edge(int from,int to,int weight,String label){
+        this(from,to,weight);
+        this.label = label;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getWeight() {
+        return weight;
     }
 
     /**
