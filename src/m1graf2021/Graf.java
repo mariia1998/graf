@@ -1,21 +1,20 @@
 package m1graf2021;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Graf {
 
-    protected Map<Node, List<Node>> adjEdList;
-    protected List<Edge> edgeList = new ArrayList<>();
+    protected Map<Node, List<Edge>> adjEdList;
+    protected List<Edge> edgeList;
+    private List<Node> nodes;
+
 
     public Graf() {
         adjEdList = new TreeMap<>();
         this.edgeList = new ArrayList<>();
     }
 
-    public Graf(Map<Node, List<Node>> adjEdList, List<Edge> edgeList) {
+    public Graf(Map<Node, List<Edge>> adjEdList, List<Edge> edgeList) {
         this.adjEdList = adjEdList;
         this.edgeList = edgeList;
     }
@@ -25,7 +24,7 @@ public class Graf {
      * @return the number of node in graph
      */
     public int nbNodes() {
-        return adjEdList.size();
+        return nodes.size();
     }
 
 
@@ -36,20 +35,41 @@ public class Graf {
         return false;
     }
 
-    public void addNode(Node n) {
-        if (existsNode(n)) {
-            System.out.println("the node already exists");
+    public void addNode(Node node) {
+        if(node == null) {
+            return;
         }
-        else
-        {
-            List<Node> added =new ArrayList<>();
-            adjEdList.put(n, added);}
+        if(existsNode(node)) {
+            return;
+        }
+         nodes.add(node);
+    }
+
+
+    public void addEdge(Node from, Node to) {
+        if(from == null || to == null) {
+            return;
+        }
+
+        if(existsNode(from) && existsNode(to)) {
+            return;
+        }
+        nodes.add(from);
+        nodes.add(to);
 
     }
 
+    public void addEdge(int from, int to, Edge edge) {
+        Node fromNode = new Node(from);
+        addNode(fromNode);
+        addNode(to);
+        this.edgeList.add(edge);
+
+        this.adjEdList.put(fromNode , this.edgeList);
+    }
+
     public void addNode(int id) {
-        Node node = new Node(id);
-        addNode(node);
+        addNode(new Node(id));
     }
 
  /*   public List<Node> getAllNodes(){

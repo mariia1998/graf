@@ -3,8 +3,9 @@ package m1graf2021;
 //import org.junit.Test;
 import org.junit.jupiter.api.Test;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -32,30 +33,6 @@ class NodeTest {
 
 
     @Test
-    void getName() {
-    }
-
-    @Test
-    void setName() {
-    }
-
-    @Test
-    void getId() {
-    }
-
-    @Test
-    void setId() {
-    }
-
-    @Test
-    void testHashCode() {
-    }
-
-    @Test
-    void testToString() {
-    }
-
-    @Test
     void testEquals() {
         Node node = new Node(1);
         Node nullPointerNode = null;
@@ -65,6 +42,25 @@ class NodeTest {
         assertEquals(node, sameValueNode);
         assertNotEquals(node, differentValueNode);
         assertNotEquals(node, nullPointerNode);
+
+    }
+
+
+
+    @Test
+    void addNode() {
+        Graf g = new Graf();
+
+        List<Edge> edges = new ArrayList<>();
+        edges.add(new Edge(new Node(0), new Node(1)));
+        edges.add(new Edge(new Node(1), new Node(2)));
+
+        
+
+
+        Graf graf = new Graf();
+
+
 
     }
 }
