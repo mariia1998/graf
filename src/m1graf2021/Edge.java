@@ -86,7 +86,11 @@ public class Edge implements Comparable<Edge>  {
     //then by target node number in case of source node equality
     @Override
     public int compareTo(@NotNull Edge o) {
-        return (this.from - o.from) - (this.to - o.to);
+        int result = this.from - o.from;
+        if(result == 0) {
+            result = this.to - o.to;
+        }
+        return result;
     }
 
 
