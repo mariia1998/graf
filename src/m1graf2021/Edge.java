@@ -82,9 +82,11 @@ public class Edge implements Comparable<Edge>  {
         return  "("+ from + ") -> " + "(" + to + ")";
     }
 
+    //The edges are ordered first by source node number,
+    //then by target node number in case of source node equality
     @Override
     public int compareTo(@NotNull Edge o) {
-        return weight - o.weight;
+        return (this.from - o.from) - (this.to - o.to);
     }
 
 

@@ -62,7 +62,6 @@ class EdgeTest {
 
     @Test
     void compareTo() {
-
     }
 
     @Test
