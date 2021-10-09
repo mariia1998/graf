@@ -62,6 +62,15 @@ class EdgeTest {
 
     @Test
     void compareTo() {
+        Edge edgeOne = new Edge(1,2);
+        Edge edgeTwo = new Edge(2,3);
+
+        assertTrue(edgeOne.compareTo(edgeTwo) < 0);
+        assertTrue(edgeTwo.compareTo(edgeOne) > 0);
+
+        //Test equal
+        edgeTwo = new Edge(1,2);
+        assertEquals(0, edgeOne.compareTo(edgeTwo));
     }
 
     @Test
