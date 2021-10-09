@@ -24,7 +24,7 @@ public class Graf {
      * @return the number of node in graph
      */
     public int nbNodes() {
-        return nodes.size();
+        return this.nodes.size();
     }
 
 

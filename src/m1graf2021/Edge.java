@@ -1,5 +1,7 @@
 package m1graf2021;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Objects;
 
 public class Edge implements Comparable<Edge>  {
@@ -14,16 +16,26 @@ public class Edge implements Comparable<Edge>  {
     private String label;
 
 
+    /*
+     * Constructor of one edge,  2 nodes(type Node instead of Integer)
+     * @param from the node from of one edge
+     * @param to the node to of one edge
+     */
+    public Edge(Node from, Node to) {
+        this.fromNode = from;
+        this.toNode = to;
+    }
 
 
 
 
     /*
-     * Constructor of one edge
+     * Constructor of one edge, 2 nodes(type Integer instead of Node)
      * @param from the node from of one edge
      * @param to the node to of one edge
      */
     public Edge(int from,int to){
+        this(new Node(from), new Node(to));
         this.from = from;
         this.to = to;
     }
@@ -39,6 +51,7 @@ public class Edge implements Comparable<Edge>  {
         this.label = label;
     }
 
+
     public void setWeight(int weight) {
         this.weight = weight;
     }
@@ -47,15 +60,6 @@ public class Edge implements Comparable<Edge>  {
         return weight;
     }
 
-    /**
-     * Constructor of the edge
-     * @param from the starting point node
-     * @param to the end point node
-     */
-    public Edge(Node from, Node to) {
-        this.fromNode = from;
-        this.toNode = to;
-    }
 
     public void setTo(int to) {
         this.to = to;
@@ -79,8 +83,8 @@ public class Edge implements Comparable<Edge>  {
     }
 
     @Override
-    public int compareTo(Edge o) {
-        return from - o.getFrom();
+    public int compareTo(@NotNull Edge o) {
+        return weight - o.weight;
     }
 
 

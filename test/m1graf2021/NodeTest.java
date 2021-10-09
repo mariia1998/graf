@@ -45,22 +45,4 @@ class NodeTest {
 
     }
 
-
-
-    @Test
-    void addNode() {
-        Graf g = new Graf();
-
-        List<Edge> edges = new ArrayList<>();
-        edges.add(new Edge(new Node(0), new Node(1)));
-        edges.add(new Edge(new Node(1), new Node(2)));
-
-        
-
-
-        Graf graf = new Graf();
-
-
-
-    }
 }
