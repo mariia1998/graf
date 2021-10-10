@@ -25,9 +25,25 @@ public class Graf {
      */
     public Graf(int...nodes) {
         this.nodes = new ArrayList<>();
-        for(int node : nodes) {
-           this.nodes.add(new Node(node));
+        List<Edge> edges = new ArrayList<>();
+        this.adjEdList = new TreeMap<>();
+
+        int nodeOrderNumber = 1;
+        for(int i = 0; i < nodes.length; i++) {
+            this.nodes.add(new Node(nodes[i]));
+            if(nodes[i] != 0) {
+                edges.add(new Edge(nodeOrderNumber, nodes[i]));
+            }
+            else {
+                if(i != 0 && nodes[i-1] == 0) {
+                    edges.add(new Edge(nodeOrderNumber, 0)); //Associating edgeless to 0 instead of null
+                }
+               adjEdList.put(new Node(nodeOrderNumber),edges);
+               nodeOrderNumber++;
+               edges = new ArrayList<>(); //Resetting the edges
+           }
         }
+
     }
 
 
@@ -68,7 +84,11 @@ public class Graf {
         }
         nodes.add(from);
         nodes.add(to);
+    }
 
+
+    public void addEdge(int from, int to) {
+        addEdge(new Node(from), new Node(to));
     }
 
     public void addEdge(int from, int to, Edge edge) {
@@ -130,14 +150,39 @@ public class Graf {
 
 
 
-
-
-
     public String toDotString() {
-        String dotString = "";
+        String dotString = "diagraph {\n";
 
-        return dotString;
+
+        for (Node key: this.adjEdList.keySet()) {
+            List<Edge> edges = adjEdList.get(key);
+            dotString += "\t"+key;
+            boolean displayArrow = true;
+            for(int i = 0; i < edges.size(); i++) {
+                Edge edge = edges.get(i);
+                if(edge.getTo() == 0) {
+                    continue;
+                }
+                if(displayArrow) {
+                    dotString += " -> ";
+                    displayArrow = false;
+                }
+                dotString += edge.getTo();
+                if(i < edges.size() - 1) {
+                    dotString += ", ";
+                }
+            }
+
+            dotString += ";\n";
+        }
+
+        return dotString+"}";
     }
+
+    public int nbEdges() {
+        return 0;
+    }
+
 
 
  /*   public List<Node> getAllNodes(){

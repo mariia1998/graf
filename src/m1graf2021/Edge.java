@@ -22,6 +22,9 @@ public class Edge implements Comparable<Edge>  {
      * @param to the node to of one edge
      */
     public Edge(Node from, Node to) {
+        if(from == null || to == null) {
+            throw new NullPointerException("Null arguments");
+        }
         this.fromNode = from;
         this.toNode = to;
     }
@@ -70,11 +73,11 @@ public class Edge implements Comparable<Edge>  {
     }
 
     public int getTo() {
-        return to;
+        return this.to;
     }
 
     public int getFrom() {
-        return from;
+        return this.from;
     }
 
 
