@@ -184,7 +184,6 @@ public class Graf {
     }
 
 
-
  /*   public List<Node> getAllNodes(){
 
     }*/
