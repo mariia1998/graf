@@ -9,6 +9,9 @@ public class Graf {
     private List<Node> nodes;
 
 
+    private List<Integer> successorArray;
+
+
     public Graf() {
         adjEdList = new TreeMap<>();
         this.edgeList = new ArrayList<>();
@@ -27,10 +30,11 @@ public class Graf {
         this.nodes = new ArrayList<>();
         List<Edge> edges = new ArrayList<>();
         this.adjEdList = new TreeMap<>();
+        this.successorArray = new ArrayList<>();
 
         int nodeOrderNumber = 1;
         for(int i = 0; i < nodes.length; i++) {
-            this.nodes.add(new Node(nodes[i]));
+            successorArray.add(nodes[i]);
             if(nodes[i] != 0) {
                 edges.add(new Edge(nodeOrderNumber, nodes[i]));
             }
@@ -120,8 +124,8 @@ public class Graf {
 
     private int getLineMatNumber() {
         int lineNumber = 0;
-        for(int i = 0; i < this.nodes.size(); i++) {
-            if(this.nodes.get(i).getId() == 0) {
+        for(int i = 0; i < this.successorArray.size(); i++) {
+            if(this.successorArray.get(i) == 0) {
                 lineNumber++;
             }
         }
