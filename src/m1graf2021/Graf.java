@@ -4,8 +4,10 @@ import java.util.*;
 
 public class Graf {
 
-    protected Map<Node, List<Edge>> adjEdList;
-    protected List<Edge> edgeList;
+
+
+    protected Map<Node, ArrayList<Edge>> adjEdList;
+    protected ArrayList<Edge> edgeList;
     private List<Node> nodes;
 
 
@@ -14,10 +16,12 @@ public class Graf {
         this.edgeList = new ArrayList<>();
     }
 
-    public Graf(Map<Node, List<Edge>> adjEdList, List<Edge> edgeList) {
+
+    public Graf(Map<Node, ArrayList<Edge>> adjEdList) {
         this.adjEdList = adjEdList;
-        this.edgeList = edgeList;
     }
+
+
 
     /**
      * Ellipsis constructor
@@ -38,7 +42,7 @@ public class Graf {
                 if(i != 0 && nodes[i-1] == 0) {
                     edges.add(new Edge(nodeOrderNumber, 0)); //Associating edgeless to 0 instead of null
                 }
-               adjEdList.put(new Node(nodeOrderNumber),edges);
+               adjEdList.put(new Node(nodeOrderNumber), (ArrayList<Edge>) edges);
                nodeOrderNumber++;
                edges = new ArrayList<>(); //Resetting the edges
            }
@@ -187,4 +191,15 @@ public class Graf {
  /*   public List<Node> getAllNodes(){
 
     }*/
+
+
+    @Override
+    public String toString() {
+        return "Graf{" +
+                "adjEdList=" + adjEdList +
+                ", edgeList=" + edgeList +
+                ", nodes=" + nodes +
+                '}';
+    }
+
 }
