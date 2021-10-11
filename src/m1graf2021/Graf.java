@@ -196,7 +196,7 @@ public class Graf {
         return this.nodes;
     }
 
-    //Knowing the number of node pointed to Node n
+    //Getting the number of node pointed to Node n
     public int inDegree(Node n) {
         int degree = 0;
         for (Edge edge : edgeList) {
@@ -207,7 +207,7 @@ public class Graf {
         return degree;
     }
 
-    //Knowing the number of node pointed by Node n
+    //Getting the number of node pointed by Node n
     public int outDegree(Node n) {
         int degree = 0;
         for (Edge edge : edgeList) {
@@ -218,9 +218,18 @@ public class Graf {
         return degree;
     }
 
-
+    //Getting the total number of degree associated to the Node n
     public int degree(Node n) {
-
-        return 0;
+        int degree = 0;
+        for (Edge edge : edgeList) {
+            int node = n.getId();
+            if(node == edge.getFrom()) {
+                degree++;
+            }
+            if(node == edge.getTo()) {
+                degree++;
+            }
+        }
+        return degree;
     }
 }
