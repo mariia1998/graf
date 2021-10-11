@@ -195,4 +195,32 @@ public class Graf {
     public List<Node> getAllNodes(){
         return this.nodes;
     }
+
+    //Knowing the number of node pointed to Node n
+    public int inDegree(Node n) {
+        int degree = 0;
+        for (Edge edge : edgeList) {
+            if(n.getId() == edge.getTo()) {
+                degree++;
+            }
+        }
+        return degree;
+    }
+
+    //Knowing the number of node pointed by Node n
+    public int outDegree(Node n) {
+        int degree = 0;
+        for (Edge edge : edgeList) {
+            if(n.getId() == edge.getFrom()) {
+                degree++;
+            }
+        }
+        return degree;
+    }
+
+
+    public int degree(Node n) {
+
+        return 0;
+    }
 }

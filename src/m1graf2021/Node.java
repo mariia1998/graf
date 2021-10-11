@@ -77,6 +77,7 @@ public class Node implements Comparable<Node>{
             return false;
         }
 
+
         final Node other = (Node)o;
         if(this.id != other.id) {
             return false;

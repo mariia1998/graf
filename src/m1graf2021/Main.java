@@ -19,7 +19,9 @@ public class Main {
         List<Node> nodes = g.getAllNodes();
         Collections.sort(nodes);
         for (Node n: nodes)
-            System.out.println("Node "+n);
+            System.out.println("Node "+n+": degree "+g.degree(n)+" (in: "+g.inDegree(n)+"/ out: "+g.outDegree(n)+")");
+
+
 
 
     }
