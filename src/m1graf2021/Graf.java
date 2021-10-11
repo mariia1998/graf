@@ -192,7 +192,7 @@ public class Graf {
     }
 
 
-//    public List<Node> getAllNodes(){
-//       // return
-//    }
+    public List<Node> getAllNodes(){
+        return this.nodes;
+    }
 }

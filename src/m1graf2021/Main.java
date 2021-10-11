@@ -1,5 +1,8 @@
 package m1graf2021;
 
+import java.util.Collections;
+import java.util.List;
+
 public class Main {
 
 
@@ -13,7 +16,10 @@ public class Main {
         System.out.println(">> DOT representation\n"+g.toDotString());
         System.out.println(""+g.nbNodes()+" nodes, "+g.nbEdges()+" edges");
         System.out.println(">> Nodes: ");
-        
+        List<Node> nodes = g.getAllNodes();
+        Collections.sort(nodes);
+        for (Node n: nodes)
+            System.out.println("Node "+n);
 
 
     }
