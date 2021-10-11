@@ -13,6 +13,7 @@ public class Main {
         System.out.println(">> DOT representation\n"+g.toDotString());
         System.out.println(""+g.nbNodes()+" nodes, "+g.nbEdges()+" edges");
         System.out.println(">> Nodes: ");
+        
 
 
     }

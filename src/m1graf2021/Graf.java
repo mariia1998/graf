@@ -6,7 +6,7 @@ public class Graf {
 
     protected Map<Node, List<Edge>> adjEdList;
     protected List<Edge> edgeList;
-    private Set<Node> nodes;
+    private List<Node> nodes;
 
 
     private List<Integer> successorArray;
@@ -27,7 +27,7 @@ public class Graf {
      * @param nodes integer nodes
      */
     public Graf(int...nodes) {
-        this.nodes = new HashSet<>();
+        this.nodes = new ArrayList<>();
         List<Edge> edges = new ArrayList<>();
         this.edgeList = new ArrayList<>();
         this.adjEdList = new TreeMap<>();
@@ -192,7 +192,7 @@ public class Graf {
     }
 
 
- /*   public List<Node> getAllNodes(){
-
-    }*/
+//    public List<Node> getAllNodes(){
+//       // return
+//    }
 }
