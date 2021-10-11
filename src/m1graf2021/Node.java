@@ -57,7 +57,7 @@ public class Node implements Comparable<Node>{
     }
 
     @Override
-    public int hashCode() { return this.name.hashCode(); }
+    public int hashCode() { return new Integer(this.id).hashCode(); }
 
     @Override
     public String toString() { return Integer.toString(id);}
