@@ -1,7 +1,7 @@
 package m1graf2021;
 
-import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.processing.SupportedAnnotationTypes;
 import java.util.Objects;
 
 public class Edge implements Comparable<Edge>  {
@@ -82,13 +82,14 @@ public class Edge implements Comparable<Edge>  {
 
 
     public String toString() {
-        return  "("+ from + ") -> " + "(" + to + ")";
+        return  "("+ fromNode.toString() + ") -> " + "(" + toNode.toString() + ")";
     }
+
 
     //The edges are ordered first by source node number,
     //then by target node number in case of source node equality
     @Override
-    public int compareTo(@NotNull Edge o) {
+    public int compareTo (  Edge o) {
         int result = this.from - o.from;
         if(result == 0) {
             result = this.to - o.to;
