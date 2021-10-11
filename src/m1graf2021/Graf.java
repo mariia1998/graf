@@ -36,7 +36,6 @@ public class Graf {
         int nodeOrderNumber = 1;
         for(int i = 0; i < nodes.length; i++) {
             successorArray.add(nodes[i]);
-            this.nodes.add(new Node(nodeOrderNumber));
             if(nodes[i] != 0) {
                 Edge edge = new Edge(nodeOrderNumber, nodes[i]);
                 edges.add(edge);
@@ -46,6 +45,7 @@ public class Graf {
                 if(i != 0 && nodes[i-1] == 0) {
                     edges.add(new Edge(nodeOrderNumber, 0)); //Associating edgeless to 0 instead of null
                 }
+                this.nodes.add(new Node(nodeOrderNumber));
                adjEdList.put(new Node(nodeOrderNumber),edges);
                nodeOrderNumber++;
                edges = new ArrayList<>(); //Resetting the edges
