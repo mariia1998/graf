@@ -21,7 +21,22 @@ public class Main {
         for (Node n: nodes)
             System.out.println("Node "+n+": degree "+g.degree(n)+" (in: "+g.inDegree(n)+"/ out: "+g.outDegree(n)+")");
 
-
+        List<Edge> edges;
+        System.out.println(">> Edges: ");
+        System.out.println("---------------------------");
+        System.out.println("Out-edges per node");
+//        for (Node n: nodes) {
+//            edges = g.getOutEdges(n);
+//            Collections.sort(edges);
+//            System.out.println(""+n+": "+edges);
+//        }
+//
+//        System.out.println("In-edges per node");
+//        for (Node n: nodes) {
+//            edges = g.getInEdges(n);
+//            Collections.sort(edges);
+//            System.out.println(""+n+": "+edges);
+//        }
 
 
     }

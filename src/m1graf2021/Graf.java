@@ -115,15 +115,38 @@ public class Graf {
 
 
     public int[] toSuccessorArray() {
-        final int NODE_SIZE = this.nodes.size();
-        int[] nodes = new int[NODE_SIZE];
-
-        int i = 0;
-        for (Node node : this.nodes) {
-            nodes[i++] = node.getId();
+        final int SIZE = this.successorArray.size();
+        int sa[] = new int[SIZE];
+        for(int i = 0; i < SIZE; i++) {
+            sa[i] = this.successorArray.get(i);
         }
-        return nodes;
+        return sa;
     }
+
+    public List<Node> getSuccessors(Node n) {
+        List<Node> successors = new ArrayList<>();
+        for(Edge edge : this.edgeList) {
+            if(edge.getFrom() == n.getId()) {
+                successors.add(new Node(edge.getTo()));
+            }
+        }
+
+        return successors;
+    }
+
+
+    public List<Node> getSuccessors(int n) {
+        List<Node> successors = new ArrayList<>();
+        for(Edge edge : this.edgeList) {
+            if(edge.getFrom() == n) {
+                successors.add(new Node(edge.getTo()));
+            }
+        }
+
+        return successors;
+    }
+
+
 
 
     private int getLineMatNumber() {
@@ -154,6 +177,8 @@ public class Graf {
         }
         return adjMatrix;
     }
+
+
 
 
 
